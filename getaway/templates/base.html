@@ -1,0 +1,98 @@
+<html>
+
+<head>
+   <!-- Meta tags for character set and viewport -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Getaway</title>
+
+   <!-- Link to Bootstrap CSS from CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+   <!-- Link to custom CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+   <!-- Favicon -->
+   <link rel="icon" href="https://www.freeiconspng.com/uploads/travel-icon-png-25.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+   <!-- Header section -->
+   <header class="bg-light border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container">
+            <!-- Logo and brand name -->
+            <img class="me-3 plane-icon" src="{{ url_for('static', filename='image/plane_icon.png') }}" alt="A cartoon plane.">
+            <a href="/" class="navbar-brand">Getaway</a>
+
+            <!-- Navbar toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <div class="navbar-nav ml-auto">
+                  {% if current_user.is_authenticated %}
+                  <!-- Display user name and logout link if authenticated -->
+                  <a class="nav-item nav-link disabled" href="#">Welcome {{current_user.name}}</a>
+                  <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+                  {% else %}
+                  <!-- Display registration and login links if not authenticated -->
+                  <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                  <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
+                  {% endif %}
+                  <!-- Other navigation links -->
+                  <a class="nav-item nav-link" href="{{ url_for('destination.create') }}">Destinations</a>
+                  <a class="nav-item nav-link" href="#">Bookings</a>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <!-- Flash messages section -->
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <div class="container-fluid">
+      <div class="row mt-3 mb-3">
+         <div class="col-md-12">
+            <!-- Display flash messages if available -->
+            {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+   {% endif %}
+   {% endwith %}
+
+   <!-- Header block (can be overridden by child templates) -->
+   {% block header %}
+
+   {% endblock %}
+
+   <div class="container-margins">
+      <!-- Content block (can be overridden by child templates) -->
+      {% block content %}
+
+      {% endblock %}
+   </div>
+
+   <!-- Footer section -->
+   <footer class="footer">
+      <div class="text-center py-2 bg-light">
+         <div class="footer-text">
+            The Ultimate Travel Booking Experience <span>&copy; 2023 Getaway</span>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Bootstrap JS from CDN -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="signin-container">
+    <div class="signin">
+        <div class="content">
+            <h2>Sign In</h2>
+            <div class="form">
+                <!-- Render the sign-in form using the imported 'render_form' function. -->
+                {{ render_form(form) }}
+                <div class="links">
+                    <!-- Provide a link to the registration page. -->
+                    <a class="signin-alignment" href="{{ url_for('auth.register') }}">Don't have an account? Signup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

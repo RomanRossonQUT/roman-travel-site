@@ -1,0 +1,217 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Body Styles */
+body {
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+/* Disabled Navigation Links */
+.nav-link.disabled,
+.nav-link:disabled {
+    color: #FFF;
+    font-size: 18px;
+}
+
+/* Background Light Styles */
+.bg-light {
+    background-color: rgba(1, 59, 148, var(--bs-bg-opacity))!important;
+    color: #FFF;
+}
+
+/* Navbar Brand Styles */
+.navbar-brand {
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 500;
+}
+.navbar-brand:hover {
+    color: #cdebff;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    color: #FFF;
+}
+.nav-link:hover {
+    color: #cdebff;
+}
+
+/* Plane Icon Styles */
+.plane-icon {
+    height: 7rem;
+    width: 7rem;
+}
+
+/* Search Input Styles */
+.search-input {
+    width: auto;
+}
+.search-btn {
+    margin-left: .5rem;
+}
+
+/* Media Query Styles */
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+/* Signin Container Styles */
+.signin-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+/* Signin Styles */
+.signin {
+    width: 100%;
+}
+
+/* Register Container Styles */
+.register-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+/* Signin Register Styles */
+.signin-register {
+    width: 100%;
+}
+
+/* Signin Register Content Styles */
+.signin-register .content h2 {
+    font-size: 2em;
+    color: #0055d5;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Signin Content Styles */
+.signin .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.signin .content h2 {
+    font-size: 2em;
+    color: #0055d5;
+    text-transform: uppercase;
+}
+
+.signin .content .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.signin .content .form .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.signin .content .form .inputBox input {
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.signin .content .form .inputBox i {
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.signin .content .form .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin .content .form .links a {
+    text-decoration: none;
+}
+
+/* Signin Alignment Styles */
+.signin-alignment {
+    text-align: left;
+    text-decoration: none;
+}
+
+/* Signin Submit Button Styles */
+.signin .content .form .inputBox input[type="submit"] {
+    padding: 10px;
+    background: #0055d5;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+/* Active Submit Button Styles */
+input[type="submit"]:active {
+    opacity: 0.6;
+}
+
+/* Footer Styles */
+.footer {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(1, 59, 148, var(--bs-bg-opacity));
+    color: #FFF;
+    text-align: center;
+}
+
+/* Container Margins */
+.container-margins {
+    min-height: 80%;
+    margin-bottom: -50px;
+    padding-bottom: 50px;
+}
